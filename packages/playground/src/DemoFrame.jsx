@@ -6,6 +6,11 @@ import { create } from "jss";
 import { jssPreset, StylesProvider } from "@material-ui/core/styles";
 import Frame, { FrameContextConsumer } from "react-frame-component";
 import { __createChakraFrameProvider } from "@rjsf/chakra-ui";
+import { __createIonic6FrameProvider } from "@liquid-state/rjsf-ionic-6";
+// import {
+//   IonApp,
+//   setupIonicReact,
+// } from '@ionic/react';
 
 /*
 Adapted from https://github.com/mui-org/material-ui/blob/master/docs/src/modules/components/DemoSandboxed.js
@@ -63,6 +68,7 @@ function DemoFrame(props) {
       container: instanceRef.current.contentDocument.body,
       window: () => instanceRef.current.contentWindow,
     });
+    // setupIonicReact();
   };
   let body = children;
   if (theme === "material-ui-4") {
@@ -102,6 +108,20 @@ function DemoFrame(props) {
         {__createChakraFrameProvider(props)}
       </FrameContextConsumer>
     );
+  }
+  else if (theme === "ionic-6") {
+    // const { head } = props;
+    // other.head = <>
+    //       <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    //   <script noModule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    //   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    // </>
+    // body = (
+    //   <FrameContextConsumer>
+    //     {__createIonic6FrameProvider(props)}
+    //   </FrameContextConsumer>
+    // );
+    body = __createIonic6FrameProvider(props)();
   }
   return (
     <Frame ref={handleRef} contentDidMount={onContentDidMount} {...other}>

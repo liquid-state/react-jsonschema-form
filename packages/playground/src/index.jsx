@@ -7,6 +7,7 @@ import { Theme as SuiTheme } from "@rjsf/semantic-ui";
 import { Theme as AntdTheme } from "@rjsf/antd";
 import { Theme as Bootstrap4Theme } from "@rjsf/bootstrap-4";
 import { Theme as ChakraUITheme } from "@rjsf/chakra-ui";
+import { Theme as Ionic6UITheme } from "@liquid-state/rjsf-ionic-6";
 import v8Validator, { customizeValidator } from "@rjsf/validator-ajv8";
 import v6Validator from "@rjsf/validator-ajv6";
 import localize_es from "ajv-i18n/localize/es";
@@ -119,6 +120,10 @@ const themes = {
   "chakra-ui": {
     stylesheet: "",
     theme: ChakraUITheme,
+  },
+  "ionic-6": {
+    stylesheet: "https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css",
+    theme: Ionic6UITheme,
   },
   "fluent-ui": {
     stylesheet:

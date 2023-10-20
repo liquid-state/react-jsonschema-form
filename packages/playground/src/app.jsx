@@ -336,7 +336,8 @@ class Playground extends Component {
     super(props);
 
     // set default theme
-    const theme = "default";
+    // const theme = "ionic-6";
+    const theme = "material-ui-4";
     const validator = "AJV8";
     // initialize state with Simple data sample
     const { schema, uiSchema, formData, validate } = samples.Simple;
